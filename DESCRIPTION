@@ -11,7 +11,8 @@ Description: For the purposes of teaching, it is often desirable to show
 Depends: 
     R (>= 4.1)
 Imports:
-    dplyr
+    dplyr,
+    tidyr
 License: MIT
 Suggests: 
     testthat (>= 3.0.0)
