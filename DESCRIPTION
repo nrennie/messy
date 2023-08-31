@@ -13,7 +13,7 @@ Depends:
 Imports:
     dplyr,
     tidyr
-License: MIT
+License: CC BY 4.0
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
