@@ -4,15 +4,15 @@
 \alias{add_whitespace}
 \title{Add whitespaces}
 \usage{
-add_whitespace(data, cols = NULL, messyness = 0.1)
+add_whitespace(data, cols = NULL, messiness = 0.1)
 }
 \arguments{
 \item{data}{input dataframe}
 
 \item{cols}{set of columns to apply transformation to. If \code{NULL}
-will apply to all columns. Default \code{NULL},}
+will apply to all columns. Default \code{NULL}.}
 
-\item{messyness}{Percentage of values to change. Must be
+\item{messiness}{Percentage of values to change. Must be
 between 0 and 1. Default 0.1.}
 }
 \value{
