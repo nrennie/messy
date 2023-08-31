@@ -12,7 +12,7 @@ Depends:
     R (>= 4.1)
 Imports:
     dplyr,
-    tidyr
+    stringr
 License: CC BY 4.0
 Suggests: 
     testthat (>= 3.0.0)
