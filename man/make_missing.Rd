@@ -4,7 +4,7 @@
 \alias{make_missing}
 \title{Make missing}
 \usage{
-make_missing(data, cols = NULL, messiness = 0.1, missing = list(NA, 999, " "))
+make_missing(data, cols = NULL, messiness = 0.1, missing = NA)
 }
 \arguments{
 \item{data}{input dataframe}
@@ -18,7 +18,7 @@ between 0 and 1. Default 0.1.}
 \item{missing}{A single value, vector, or list of what the
 missing values will be replaced with. If length is greater
 than 1, values will be replaced randomly.
-Default \code{list(NA, 999, " ")}.}
+Default \code{NA}.}
 }
 \value{
 a dataframe the same size as the input data.

@@ -10,14 +10,14 @@
 #' @param missing A single value, vector, or list of what the
 #' missing values will be replaced with. If length is greater
 #' than 1, values will be replaced randomly.
-#' Default `list(NA, 999, " ")`.
+#' Default `NA`.
 #' @return a dataframe the same size as the input data.
 #' @export
 
 make_missing <- function(data,
                          cols = NULL,
                          messiness = 0.1,
-                         missing = list(NA, 999, " ")) {
+                         missing = NA) {
   if (messiness < 0 || messiness > 1) {
     stop("'messiness' must be between 0 and 1")
   }
@@ -27,8 +27,7 @@ make_missing <- function(data,
         dplyr::across(
           dplyr::everything(),
           ~ dplyr::case_when(
-            runif(nrow(data)) <= messiness ~
-              tidyr::replace_na(.x, unlist(sample(missing, 1))),
+            runif(nrow(data)) <= messiness ~ unlist(sample(missing, 1)),
             TRUE ~ .x
           )
         )
@@ -43,8 +42,7 @@ make_missing <- function(data,
           dplyr::across(
             dplyr::all_of(cols),
             ~ dplyr::case_when(
-              runif(nrow(data)) <= messiness ~
-                tidyr::replace_na(.x, unlist(sample(missing, 1))),
+              runif(nrow(data)) <= messiness ~ unlist(sample(missing, 1)),
               TRUE ~ .x
             )
           )
