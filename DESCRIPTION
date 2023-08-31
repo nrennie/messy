@@ -4,8 +4,13 @@ Version: 0.0.0.9000
 Authors@R: c(
     person(given = "Nicola", family = "Rennie", role = c("aut", "cre", "cph"),
     email = "nrennie35@gmail.com"), comment = c(ORCID = "0000-0003-4797-557X"))
-Description: What the package does (one paragraph).
-License: MIT + file LICENSE
+Description: For the purposes of teaching, it is often desirable to show 
+    examples of working with messy data and how to clean it. This R package 
+    creates messy data from clean, tidy dataframes so that students have a 
+    clean example to work towards.
+Depends:
+    ggplot2
+License: MIT
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
