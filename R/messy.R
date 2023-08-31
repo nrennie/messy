@@ -17,6 +17,7 @@ messy <- function(data,
                   missing = list(NA, 999, " ")) {
   output <- data |>
     add_whitespace(messiness = messiness) |>
-    make_missing(messiness = messiness, missing = missing)
+    make_missing(messiness = messiness, missing = missing) |>
+    change_case(messiness = messiness)
   return(output)
 }
