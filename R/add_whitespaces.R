@@ -11,7 +11,7 @@
 #' @export
 
 add_whitespace <- function(data, cols = NULL, messyness = 0.1) {
-  if (messyness < 0 | messyness > 1) {
+  if (messyness < 0 || messyness > 1) {
     stop("'messyness' must be between 0 and 1")
   }
   if (is.null(cols)) {
