@@ -2,14 +2,21 @@
 #'
 #' Make a data frame messier.
 #' @param data input dataframe
-#' @param umessiness Percentage of values to change per function. Must be
+#' @param messiness Percentage of values to change per function. Must be
 #' between 0 and 1. Default 0.1.
+#' @param missing A single value, vector, or list of what the
+#' missing values will be replaced with. If length is greater
+#' than 1, values will be replaced randomly.
+#' Default `list(NA, 999, " ")`.
 #' @return a dataframe the same size as the input data.
 #' @export
 
 
-messy <- function(data, messiness = 0.1) {
+messy <- function(data,
+                  messiness = 0.1,
+                  missing = list(NA, 999, " ")) {
   output <- data |>
-    add_whitespace(messiness = messiness)
+    add_whitespace(messiness = messiness) |>
+    make_missing(messiness = messiness, missing = missing)
   return(output)
 }

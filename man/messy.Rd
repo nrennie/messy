@@ -4,13 +4,18 @@
 \alias{messy}
 \title{Messy}
 \usage{
-messy(data, messiness = 0.1)
+messy(data, messiness = 0.1, missing = list(NA, 999, " "))
 }
 \arguments{
 \item{data}{input dataframe}
 
-\item{umessiness}{Percentage of values to change per function. Must be
+\item{messiness}{Percentage of values to change per function. Must be
 between 0 and 1. Default 0.1.}
+
+\item{missing}{A single value, vector, or list of what the
+missing values will be replaced with. If length is greater
+than 1, values will be replaced randomly.
+Default \code{list(NA, 999, " ")}.}
 }
 \value{
 a dataframe the same size as the input data.
