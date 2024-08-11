@@ -18,7 +18,7 @@ add_whitespace <- function(data, cols = NULL, messiness = 0.1) {
     output <- data |>
       dplyr::mutate(dplyr::across(dplyr::everything(), ~dplyr::case_when(
         runif(nrow(data)) <= messiness ~ paste0(.x, " "),
-        TRUE ~ .x
+        TRUE ~ as.character(.x)
       )))
   } else {
     # check if all cols present in colnames
