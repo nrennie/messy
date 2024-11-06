@@ -2,6 +2,9 @@
 
 export(add_whitespace)
 export(change_case)
+export(make_column_names_messy)
 export(make_missing)
+export(make_string_messy)
 export(messy)
 importFrom(rlang,.data)
+importFrom(stats,runif)

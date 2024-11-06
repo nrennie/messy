@@ -4,10 +4,10 @@
 #' capitalises characters in the provided
 #' character vector.
 #' 
-#' @paramd x string vector to mess up
+#' @param x string vector to mess up
 #' @return string vector that is messed up
+#' @export
 #' @examples
-#' 
 #' make_string_messy(c("Hello", "world"))
 make_string_messy <- function(x){
   sapply(x, messy_string, USE.NAMES = FALSE)
@@ -18,10 +18,10 @@ make_string_messy <- function(x){
 #' Adds special characters and randomly
 #' capitalises characters in the column
 #' names of a data frame.
-#' @paramd df data.frame to alter column names
+#' @param df data.frame to alter column names
 #' @return data.frame with messy column names
+#' @export
 #' @examples
-#' 
 #' make_column_names_messy(iris)
 make_column_names_messy <- function(df) {
   # Assign the new column names to the dataframe
@@ -34,8 +34,9 @@ make_column_names_messy <- function(df) {
 #' 
 #' Adds special characters and randomly
 #' capitalises strings.
-#' @params s string to mess up
+#' @param s string to mess up
 #' @return messy string
+#' @importFrom stats runif
 #' @noRd
 messy_string <- function(s) {
   random_chars <- c("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", ".")
