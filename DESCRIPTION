@@ -1,6 +1,6 @@
 Package: messy
 Title: Create messy data from clean dataframes
-Version: 0.0.1001
+Version: 0.0.2
 Authors@R: c(
     person(given = "Nicola", family = "Rennie", role = c("aut", "cre", "cph"),
     email = "nrennie35@gmail.com", comment = c(ORCID = "0000-0003-4797-557X")))

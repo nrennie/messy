@@ -1,4 +1,4 @@
-# messy 0.0.1001+
+# messy 0.0.2
 
 * Add pkgdown site
 * Add lintr file
