@@ -25,17 +25,29 @@ change_case <- function(data,
   }
 
   if (case_type == "letter") {
-
-    # # Randomly change the case of each character using sapply
-    # chars <- sapply(chars, function(char) {
-    #   if (stats::runif(1) < 0.5) {
-    #     return(toupper(char))
-    #   } else {
-    #     return(tolower(char))
-    #   }
-    # })
-
-
+    if (is.null(cols)) {
+      output <- data |>
+        dplyr::mutate(
+          dplyr::across(
+            dplyr::where(~ is.character(.x) | is.factor(.x)),
+            ~ change_letter_case(.x, messiness = messiness)
+          )
+        )
+    } else {
+      # check if all cols present in colnames
+      if (!all((cols %in% colnames(data)))) {
+        stop("All elements of 'cols' must be a column name in 'data'")
+      } else {
+        output <- data |>
+          dplyr::mutate(
+            dplyr::across(
+              dplyr::all_of(cols) &
+                dplyr::where(~ is.character(.x) | is.factor(.x)),
+              ~ change_letter_case(.x, messiness = messiness)
+            )
+          )
+      }
+    }
   } else {
     if (is.null(cols)) {
       output <- data |>
@@ -83,3 +95,36 @@ change_case <- function(data,
 }
 
 
+#' Function to change case of each individual letter
+#'
+#' @param x Character vector
+#' @param messiness Percentage of values to change. Must be
+#' between 0 and 1. Default 0.1.
+#' @return Messy character vector
+#' @noRd
+change_letter_case <- function(x, messiness = 0.1) {
+  # if factor, convert to character
+  if (is.factor(x)) {
+    x <- as.character(x)
+  }
+
+  change_letter_case_string <- function(s, ...) {
+    # Convert to vector of characters
+    chars <- strsplit(s, NULL)[[1]]
+
+    # Randomly change the case of each character using sapply
+    chars <- sapply(chars, function(char) {
+      if (stats::runif(1) < messiness) {
+        return(toupper(char))
+      } else {
+        return(tolower(char))
+      }
+    })
+
+    # Reassemble the string
+    return(paste(chars, collapse = ""))
+  }
+
+  x_messy <- sapply(x, change_letter_case_string, USE.NAMES = FALSE)
+  return(x_messy)
+}

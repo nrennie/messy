@@ -15,7 +15,7 @@ messy_colnames <- function(data, messiness = 0.2) {
     add_special_chars(messiness = messiness) |>
     change_case(messiness = messiness) |>
     add_whitespace(messiness = messiness) |>
-    dplyr::pull(x)
+    dplyr::pull(.data$x)
   # Assign the new column names to the dataframe
   names(data) <- new_names
   return(data)

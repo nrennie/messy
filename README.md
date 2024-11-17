@@ -125,6 +125,27 @@ change_case(ToothGrowth[1:10,], messiness = 0.5)
 10  7.0   VC  0.5
 ```
 
+By default, the case of the entire string is changes. Alternatively, you can specify to change the case of each individual letter:
+
+```r
+set.seed(1234)
+change_case(ToothGrowth[1:10,], messiness = 0.5, case_type = "letter")
+```
+
+```r
+    len supp dose
+1   4.2   VC  0.5
+2  11.5   VC  0.5
+3   7.3   vC  0.5
+4   5.8   VC  0.5
+5   6.4   VC  0.5
+6  10.0   VC  0.5
+7  11.2   Vc  0.5
+8  11.2   Vc  0.5
+9   5.2   VC  0.5
+10  7.0   VC  0.5
+```
+
 ### `add_special_chars()`
 
 Randomly add special characters to character strings:
@@ -241,3 +262,31 @@ ToothGrowth[1:10,] |>
 9   5.2  !VC  0.5
 10  7.0 VC*   0.5
 ```
+
+If you're adding `messy_colnames()` to a chain (and you specify only some columns in other functions), make sure `messy_colnames()` comes at the end:
+
+```r
+set.seed(1234)
+ToothGrowth[1:10,] |> 
+  make_missing(cols = "supp", missing = " ") |> 
+  make_missing(cols = c("len", "dose"), missing = c(NA, 999)) |> 
+  add_whitespace(cols = "supp", messiness = 0.5) |> 
+  add_special_chars(cols = "supp") |> 
+  messy_colnames()
+```
+
+```r
+   !l_e)n  S^UPP d^o)se 
+1      4.2    VC     0.5
+2     11.5   VC       NA
+3      7.3    VC     0.5
+4      5.8  *VC      0.5
+5      6.4   VC      0.5
+6     10.0    VC     0.5
+7     11.2           0.5
+8     11.2   V#C      NA
+9      5.2   !VC     0.5
+10     7.0  VC*      0.5
+```
+
+Otherwise, the column names you try to select may no longer exist!
