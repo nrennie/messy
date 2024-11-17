@@ -12,6 +12,8 @@
 #' @importFrom rlang .data
 #' @return a dataframe the same size as the input data.
 #' @export
+#' @examples
+#' change_case(mtcars)
 
 change_case <- function(data,
                         cols = NULL,

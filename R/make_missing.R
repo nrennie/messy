@@ -13,6 +13,8 @@
 #' Default `NA`.
 #' @return a dataframe the same size as the input data.
 #' @export
+#' @examples
+#' make_missing(mtcars)
 
 make_missing <- function(data,
                          cols = NULL,

@@ -25,3 +25,6 @@ a dataframe the same size as the input data.
 Randomly switch between title case and lowercase for
 character strings
 }
+\examples{
+change_case(mtcars)
+}

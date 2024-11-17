@@ -26,3 +26,6 @@ a dataframe the same size as the input data.
 \description{
 Make a data frame messier.
 }
+\examples{
+messy(mtcars)
+}

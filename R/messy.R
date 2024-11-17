@@ -12,6 +12,8 @@
 #' the `"word"` or `"letter"`.
 #' @return a dataframe the same size as the input data.
 #' @export
+#' @examples
+#' messy(mtcars)
 
 messy <- function(data,
                   messiness = 0.1,

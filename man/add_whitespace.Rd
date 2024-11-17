@@ -22,3 +22,6 @@ a dataframe the same size as the input data.
 Randomly add whitespaces to the end of some values in
 all or a subset of columns.
 }
+\examples{
+add_whitespace(mtcars)
+}

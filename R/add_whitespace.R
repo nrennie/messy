@@ -9,6 +9,8 @@
 #' between 0 and 1. Default 0.1.
 #' @return a dataframe the same size as the input data.
 #' @export
+#' @examples
+#' add_whitespace(mtcars)
 
 add_whitespace <- function(data, cols = NULL, messiness = 0.1) {
   if (messiness < 0 || messiness > 1) {
