@@ -9,7 +9,7 @@
 #' @export
 #' @examples
 #' make_string_messy(c("Hello", "world"))
-make_string_messy <- function(x){
+make_string_messy <- function(x) {
   sapply(x, messy_string, USE.NAMES = FALSE)
 }
 
