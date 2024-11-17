@@ -5,3 +5,7 @@
 ^cran-comments\.md$
 .github
 .lintr
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$

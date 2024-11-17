@@ -1,0 +1,5 @@
+url: https://nrennie.rbind.io/messy/
+template:
+  package: nrenniepkgdown
+  bootstrap: 5
+
