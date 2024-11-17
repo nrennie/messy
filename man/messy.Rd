@@ -4,7 +4,7 @@
 \alias{messy}
 \title{Messy}
 \usage{
-messy(data, messiness = 0.1, missing = NA)
+messy(data, messiness = 0.1, missing = NA, case_type = "word")
 }
 \arguments{
 \item{data}{input dataframe}
@@ -16,10 +16,16 @@ between 0 and 1. Default 0.1.}
 missing values will be replaced with. If length is greater
 than 1, values will be replaced randomly.
 Default \code{NA}.}
+
+\item{case_type}{Whether the case should change based on
+the \code{"word"} or \code{"letter"}.}
 }
 \value{
 a dataframe the same size as the input data.
 }
 \description{
 Make a data frame messier.
+}
+\examples{
+messy(mtcars)
 }

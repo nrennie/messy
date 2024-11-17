@@ -13,6 +13,8 @@
 #' Default `NA`.
 #' @return a dataframe the same size as the input data.
 #' @export
+#' @examples
+#' make_missing(mtcars)
 
 make_missing <- function(data,
                          cols = NULL,
@@ -27,7 +29,7 @@ make_missing <- function(data,
         dplyr::across(
           dplyr::everything(),
           ~ dplyr::case_when(
-            runif(nrow(data)) <= messiness ~ unlist(sample(missing, 1)),
+            runif(nrow(data)) <= messiness ~ unlist(resample(missing, 1)),
             TRUE ~ .x
           )
         )
@@ -42,7 +44,7 @@ make_missing <- function(data,
           dplyr::across(
             dplyr::all_of(cols),
             ~ dplyr::case_when(
-              runif(nrow(data)) <= messiness ~ unlist(sample(missing, 1)),
+              runif(nrow(data)) <= messiness ~ unlist(resample(missing, 1)),
               TRUE ~ .x
             )
           )

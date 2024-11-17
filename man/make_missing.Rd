@@ -27,3 +27,6 @@ a dataframe the same size as the input data.
 Randomly make values missing in all data columns, or a
 subset of columns
 }
+\examples{
+make_missing(mtcars)
+}
