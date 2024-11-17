@@ -10,6 +10,6 @@
 #' messy_colnames(mtcars)
 messy_colnames <- function(data) {
   # Assign the new column names to the dataframe
-  names(data) <- make_string_messy(names(data))
+  names(data) <- special_chars(names(data))
   return(data)
 }

@@ -8,16 +8,19 @@
 #' missing values will be replaced with. If length is greater
 #' than 1, values will be replaced randomly.
 #' Default `NA`.
+#' @param case_type Whether the case should change based on
+#' the `"word"` or `"letter"`.
 #' @return a dataframe the same size as the input data.
 #' @export
 
-
 messy <- function(data,
                   messiness = 0.1,
-                  missing = NA) {
+                  missing = NA,
+                  case_type = "word") {
   output <- data |>
+    add_special_chars(messiness = messiness) |>
     add_whitespace(messiness = messiness) |>
     make_missing(messiness = messiness, missing = missing) |>
-    change_case(messiness = messiness)
+    change_case(messiness = messiness, case_type = case_type)
   return(output)
 }

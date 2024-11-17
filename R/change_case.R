@@ -1,21 +1,29 @@
 #' Change case
 #'
 #' Randomly switch between title case and lowercase for
+#' character strings
 #' @param data input dataframe
 #' @param cols set of columns to apply transformation to. If `NULL`
 #' will apply to all columns. Default `NULL`.
 #' @param messiness Percentage of values to change. Must be
 #' between 0 and 1. Default 0.1.
+#' @param case_type Whether the case should change based on
+#' the `"word"` or `"letter"`.
 #' @importFrom rlang .data
 #' @return a dataframe the same size as the input data.
 #' @export
 
 change_case <- function(data,
                         cols = NULL,
-                        messiness = 0.1) {
+                        messiness = 0.1,
+                        case_type = "word") {
   if (messiness < 0 || messiness > 1) {
     stop("'messiness' must be between 0 and 1")
   }
+  if (!(case_type %in% c("word", "letter"))) {
+    stop("'case_type' must be either 'word' or 'letter'")
+  }
+
   if (is.null(cols)) {
     output <- data |>
       dplyr::mutate(
@@ -59,3 +67,12 @@ change_case <- function(data,
   }
   return(output)
 }
+
+# # Randomly change the case of each character using sapply
+# chars <- sapply(chars, function(char) {
+#   if (stats::runif(1) < 0.5) {
+#     return(toupper(char))
+#   } else {
+#     return(tolower(char))
+#   }
+# })
