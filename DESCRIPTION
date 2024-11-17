@@ -22,5 +22,5 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Config/Needs/website: nrennie/nrenniepkgdown
-URL: http://nrennie.rbind.io/messy/, https://github.com/nrennie/messy
+URL: http://nrennie.rbind.io/messy, https://github.com/nrennie/messy
 BugReports: https://github.com/nrennie/messy/issues

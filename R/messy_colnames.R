@@ -7,7 +7,7 @@
 #' @return data.frame with messy column names
 #' @export
 #' @examples
-#' make_column_names_messy(mtcars)
+#' messy_colnames(mtcars)
 messy_colnames <- function(data) {
   # Assign the new column names to the dataframe
   names(data) <- make_string_messy(names(data))
