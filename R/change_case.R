@@ -24,36 +24,27 @@ change_case <- function(data,
     stop("'case_type' must be either 'word' or 'letter'")
   }
 
-  if (is.null(cols)) {
-    output <- data |>
-      dplyr::mutate(
-        rs_col = stats::runif(nrow(data))
-      ) |>
-      dplyr::mutate(
-        dplyr::across(
-          dplyr::where(~ is.character(.x) | is.factor(.x)),
-          ~ dplyr::case_when(
-            .data$rs_col <= messiness / 2 ~ stringr::str_to_lower(.x),
-            (.data$rs_col > messiness / 2 & .data$rs_col <= messiness) ~
-              stringr::str_to_upper(.x),
-            TRUE ~ .x
-          )
-        )
-      ) |>
-      dplyr::select(-.data$rs_col)
+  if (case_type == "letter") {
+
+    # # Randomly change the case of each character using sapply
+    # chars <- sapply(chars, function(char) {
+    #   if (stats::runif(1) < 0.5) {
+    #     return(toupper(char))
+    #   } else {
+    #     return(tolower(char))
+    #   }
+    # })
+
+
   } else {
-    # check if all cols present in colnames
-    if (!all((cols %in% colnames(data)))) {
-      stop("All elements of 'cols' must be a column name in 'data'")
-    } else {
+    if (is.null(cols)) {
       output <- data |>
         dplyr::mutate(
           rs_col = stats::runif(nrow(data))
         ) |>
         dplyr::mutate(
           dplyr::across(
-            dplyr::all_of(cols) &
-              dplyr::where(~ is.character(.x) | is.factor(.x)),
+            dplyr::where(~ is.character(.x) | is.factor(.x)),
             ~ dplyr::case_when(
               .data$rs_col <= messiness / 2 ~ stringr::str_to_lower(.x),
               (.data$rs_col > messiness / 2 & .data$rs_col <= messiness) ~
@@ -63,16 +54,32 @@ change_case <- function(data,
           )
         ) |>
         dplyr::select(-.data$rs_col)
+    } else {
+      # check if all cols present in colnames
+      if (!all((cols %in% colnames(data)))) {
+        stop("All elements of 'cols' must be a column name in 'data'")
+      } else {
+        output <- data |>
+          dplyr::mutate(
+            rs_col = stats::runif(nrow(data))
+          ) |>
+          dplyr::mutate(
+            dplyr::across(
+              dplyr::all_of(cols) &
+                dplyr::where(~ is.character(.x) | is.factor(.x)),
+              ~ dplyr::case_when(
+                .data$rs_col <= messiness / 2 ~ stringr::str_to_lower(.x),
+                (.data$rs_col > messiness / 2 & .data$rs_col <= messiness) ~
+                  stringr::str_to_upper(.x),
+                TRUE ~ .x
+              )
+            )
+          ) |>
+          dplyr::select(-.data$rs_col)
+      }
     }
   }
   return(output)
 }
 
-# # Randomly change the case of each character using sapply
-# chars <- sapply(chars, function(char) {
-#   if (stats::runif(1) < 0.5) {
-#     return(toupper(char))
-#   } else {
-#     return(tolower(char))
-#   }
-# })
+

@@ -4,10 +4,13 @@
 \alias{messy_colnames}
 \title{Make column names messy}
 \usage{
-messy_colnames(data)
+messy_colnames(data, messiness = 0.2)
 }
 \arguments{
 \item{data}{data.frame to alter column names}
+
+\item{messiness}{Percentage of values to change per function. Must be
+between 0 and 1. Default 0.1.}
 }
 \value{
 data.frame with messy column names

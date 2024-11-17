@@ -192,6 +192,29 @@ make_missing(ToothGrowth[1:10,], cols = "supp", missing = "999")
 10  7.0   VC  0.5
 ```
 
+### `messy_colnames()`
+
+Create messy column names:
+
+```r
+set.seed(1234)
+messy_colnames(ToothGrowth[1:10,])
+```
+
+```r
+   )len s(upp  dose
+1   4.2     VC  0.5
+2  11.5     VC  0.5
+3   7.3     VC  0.5
+4   5.8     VC  0.5
+5   6.4     VC  0.5
+6  10.0     VC  0.5
+7  11.2     VC  0.5
+8  11.2     VC  0.5
+9   5.2     VC  0.5
+10  7.0     VC  0.5
+```
+
 ### Combining functions
 
 You can pipe together multiple functions to create custom messy transformations:
