@@ -18,5 +18,5 @@ capitalises characters in the column
 names of a data frame.
 }
 \examples{
-make_column_names_messy(mtcars)
+messy_colnames(mtcars)
 }
