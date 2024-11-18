@@ -1,3 +1,12 @@
+
+# messy (development version)
+
+* Add date(time) messy-ing functions:
+
+  - `messy_datetime_tzones()` will randomly set different timezones to datetime columns
+  - `messy_datetime_formats()` and `messy_date_formats()` will format date(times) as characters, and scramble their strptime formats.
+  - `split_datetimes()` and `split_dates()` will split datetime columns into "date" and "time" columns, and Date columns into "year", "month", and "day" columns.
+
 # messy 0.0.2
 
 * Add pkgdown site
