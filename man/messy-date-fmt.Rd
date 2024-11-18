@@ -27,6 +27,9 @@ to all POSIXt columns (for \code{\link[=messy_datetime_formats]{messy_datetime_f
 \item{formats}{A vector of any number of valid \code{\link[=strptime]{strptime()}} formats. Multiple
 formats will be sampled at random.}
 }
+\value{
+a dataframe the same size as the input data.
+}
 \description{
 Takes any date(times) column and transforms it into a character column,
 sampling from any number of random of valid character representations.

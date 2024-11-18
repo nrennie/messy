@@ -1,6 +1,4 @@
 
-
-
 #' Make date(time) formats inconsistent
 #'
 #' Takes any date(times) column and transforms it into a character column,
@@ -12,6 +10,7 @@
 #'   [messy_date_formats()]).
 #' @param formats A vector of any number of valid [strptime()] formats. Multiple
 #'   formats will be sampled at random.
+#' @return a dataframe the same size as the input data.
 #'
 #' @rdname messy-date-fmt
 #' @order 1
@@ -65,6 +64,7 @@ messy_date_formats <-
 #'   actual hour/minute values changed along with the timezones. If `force =
 #'   TRUE`, which requires [lubridate][lubridate::force_tz()], the datetime values
 #'   will remain the same and only the timezone will differ.
+#' @return a dataframe the same size as the input data.
 #'
 #' @family Messy date(time) functions
 #' @author Jack Davison

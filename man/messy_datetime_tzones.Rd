@@ -19,6 +19,9 @@ to all POSIXt columns.}
 actual hour/minute values changed along with the timezones. If \code{force = TRUE}, which requires \link[lubridate:force_tz]{lubridate}, the datetime values
 will remain the same and only the timezone will differ.}
 }
+\value{
+a dataframe the same size as the input data.
+}
 \description{
 Takes any number of datetime columns and changes their timezones either
 totally at random, or from a user-provided list of timezones.
