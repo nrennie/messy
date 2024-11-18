@@ -3,3 +3,11 @@ template:
   package: nrenniepkgdown
   bootstrap: 5
 
+reference:
+- title: General Messying Functions
+- contents:
+  - lacks_concept("Messy date(time) functions")
+
+- title: Date(time) Messying Functions
+- contents:
+  - has_concept("Messy date(time) functions")
