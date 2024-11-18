@@ -23,6 +23,17 @@ will remain the same and only the timezone will differ.}
 Takes any number of datetime columns and changes their timezones either
 totally at random, or from a user-provided list of timezones.
 }
+\examples{
+data <- data.frame(dates = rep(Sys.time(), 10))
+
+data$dates
+attr(data$dates, "tzone")
+
+messy <- messy_datetime_tzones(data, tzones = "Poland")
+messy$dates
+attr(messy$dates, "tzone")
+
+}
 \seealso{
 Other Messy date(time) functions: 
 \code{\link{messy_datetime_formats}()},

@@ -19,6 +19,11 @@
 #' @family Messy date(time) functions
 #' @author Jack Davison
 #' @export
+#'
+#' @examples
+#' data <- data.frame(dates = rep(Sys.Date(), 10))
+#'
+#' messy_date_formats(data)
 messy_datetime_formats <-
   function(data,
            cols = NULL,
@@ -64,6 +69,17 @@ messy_date_formats <-
 #' @family Messy date(time) functions
 #' @author Jack Davison
 #' @export
+#'
+#' @examples
+#' data <- data.frame(dates = rep(Sys.time(), 10))
+#'
+#' data$dates
+#' attr(data$dates, "tzone")
+#'
+#' messy <- messy_datetime_tzones(data, tzones = "Poland")
+#' messy$dates
+#' attr(messy$dates, "tzone")
+#'
 messy_datetime_tzones <-
   function(data,
            cols = NULL,
