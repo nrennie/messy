@@ -36,7 +36,6 @@ sampling from any number of random of valid character representations.
 }
 \examples{
 data <- data.frame(dates = rep(Sys.Date(), 10))
-
 messy_date_formats(data)
 }
 \seealso{

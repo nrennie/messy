@@ -21,8 +21,8 @@
 #'
 #' @examples
 #' data <- data.frame(dates = rep(Sys.Date(), 10))
-#'
 #' messy_date_formats(data)
+
 messy_datetime_formats <-
   function(data,
            cols = NULL,

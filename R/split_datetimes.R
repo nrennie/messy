@@ -26,9 +26,8 @@
 #' @examples
 #' # split datetimes
 #' data <- data.frame(today = Sys.time())
-#' data
 #' split_datetimes(data)
-#'
+
 split_datetimes <-
   function(data,
            cols = NULL,

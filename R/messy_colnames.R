@@ -7,9 +7,11 @@
 #' @param messiness Percentage of values to change per function. Must be
 #' between 0 and 1. Default 0.1.
 #' @return data.frame with messy column names
+#' @author Athanasia Monika Mowinckel
 #' @export
 #' @examples
 #' messy_colnames(mtcars)
+
 messy_colnames <- function(data, messiness = 0.2) {
   new_names <- data.frame(x = names(data)) |>
     add_special_chars(messiness = messiness) |>

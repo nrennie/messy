@@ -23,3 +23,6 @@ names of a data frame.
 \examples{
 messy_colnames(mtcars)
 }
+\author{
+Athanasia Monika Mowinckel
+}

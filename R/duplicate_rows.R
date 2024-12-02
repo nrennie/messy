@@ -5,9 +5,11 @@
 #' between 0 and 1. Default 0.1.
 #' @param shuffle Insert duplicated data underneath original data or insert randomly
 #' @return A dataframe with duplicated rows inserted
+#' @author Philip Leftwich
 #' @export
 #' @examples
 #' duplicate_rows(mtcars, messiness = 0.1)
+
 duplicate_rows <- function(data, messiness = 0.1, shuffle = FALSE) {
   if (messiness < 0 || messiness > 1) {
     stop("'messiness' must be between 0 and 1")

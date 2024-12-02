@@ -33,9 +33,7 @@ columns.
 \examples{
 # split datetimes
 data <- data.frame(today = Sys.time())
-data
 split_datetimes(data)
-
 # split dates
 data <- data.frame(today = Sys.Date())
 data

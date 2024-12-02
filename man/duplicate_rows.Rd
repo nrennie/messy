@@ -23,3 +23,6 @@ Duplicate rows and insert them into the dataframe in order or at random
 \examples{
 duplicate_rows(mtcars, messiness = 0.1)
 }
+\author{
+Philip Leftwich
+}

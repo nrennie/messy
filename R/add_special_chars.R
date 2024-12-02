@@ -10,6 +10,7 @@
 #' @export
 #' @examples
 #' add_special_chars(mtcars)
+
 add_special_chars <- function(data,
                               cols = NULL,
                               messiness = 0.1) {
@@ -50,7 +51,9 @@ add_special_chars <- function(data,
 #' @param messiness Percentage of values to change. Must be
 #' between 0 and 1. Default 0.1.
 #' @return Messy character vector
+#' @author Athanasia Monika Mowinckel
 #' @noRd
+
 special_chars <- function(x, messiness = 0.1) {
   # if factor, convert to character
   if (is.factor(x)) {
