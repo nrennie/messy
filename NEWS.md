@@ -1,6 +1,6 @@
+# messy 0.1.0
 
-# messy (development version)
-
+* CRAN release
 * Add `duplicate_rows()` function
 * Add date(time) messy-ing functions:
   - `messy_datetime_tzones()` will randomly set different timezones to datetime columns
