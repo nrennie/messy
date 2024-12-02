@@ -1,12 +1,12 @@
 Package: messy
-Title: Create messy data from clean dataframes
+Title: Create Messy Data from Clean Data Frames
 Version: 0.0.2.0002
 Authors@R: c(
     person(given = "Nicola", family = "Rennie", role = c("aut", "cre", "cph"),
     email = "nrennie35@gmail.com", comment = c(ORCID = "0000-0003-4797-557X")))
 Description: For the purposes of teaching, it is often desirable to show 
     examples of working with messy data and how to clean it. This R package 
-    creates messy data from clean, tidy dataframes so that students have a 
+    creates messy data from clean, tidy data frames so that students have a 
     clean example to work towards.
 Depends: 
     R (>= 4.1)
