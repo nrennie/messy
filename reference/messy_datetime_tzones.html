@@ -38,7 +38,7 @@ totally at random, or from a user-provided list of timezones."><meta property="o
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Change the timezone of datetime columns</h1>
-      <small class="dont-index">Source: <a href="https://github.com/nrennie/messy/blob/main/R/messy_dates.R" class="external-link"><code>R/messy_dates.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/nrennie/messy/blob/v0.1.0/R/messy_dates.R" class="external-link"><code>R/messy_dates.R</code></a></small>
       <div class="d-none name"><code>messy_datetime_tzones.Rd</code></div>
     </div>
 
@@ -96,21 +96,21 @@ will remain the same and only the timezone will differ.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>dates <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">data</span><span class="op">$</span><span class="va">dates</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "2024-12-03 22:57:10 UTC" "2024-12-03 22:57:10 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "2024-12-03 22:57:10 UTC" "2024-12-03 22:57:10 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "2024-12-03 22:57:10 UTC" "2024-12-03 22:57:10 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "2024-12-03 22:57:10 UTC" "2024-12-03 22:57:10 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "2024-12-03 22:57:10 UTC" "2024-12-03 22:57:10 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "2024-12-03 22:58:55 UTC" "2024-12-03 22:58:55 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "2024-12-03 22:58:55 UTC" "2024-12-03 22:58:55 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "2024-12-03 22:58:55 UTC" "2024-12-03 22:58:55 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "2024-12-03 22:58:55 UTC" "2024-12-03 22:58:55 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "2024-12-03 22:58:55 UTC" "2024-12-03 22:58:55 UTC"</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/attr.html" class="external-link">attr</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">dates</span>, <span class="st">"tzone"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">messy</span> <span class="op">&lt;-</span> <span class="fu">messy_datetime_tzones</span><span class="op">(</span><span class="va">data</span>, tzones <span class="op">=</span> <span class="st">"Poland"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">messy</span><span class="op">$</span><span class="va">dates</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "2024-12-03 23:57:10 CET" "2024-12-03 23:57:10 CET"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "2024-12-03 23:57:10 CET" "2024-12-03 23:57:10 CET"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "2024-12-03 23:57:10 CET" "2024-12-03 23:57:10 CET"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "2024-12-03 23:57:10 CET" "2024-12-03 23:57:10 CET"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "2024-12-03 23:57:10 CET" "2024-12-03 23:57:10 CET"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "2024-12-03 23:58:55 CET" "2024-12-03 23:58:55 CET"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "2024-12-03 23:58:55 CET" "2024-12-03 23:58:55 CET"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "2024-12-03 23:58:55 CET" "2024-12-03 23:58:55 CET"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "2024-12-03 23:58:55 CET" "2024-12-03 23:58:55 CET"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "2024-12-03 23:58:55 CET" "2024-12-03 23:58:55 CET"</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/attr.html" class="external-link">attr</a></span><span class="op">(</span><span class="va">messy</span><span class="op">$</span><span class="va">dates</span>, <span class="st">"tzone"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Poland"</span>
 <span class="r-in"><span></span></span>
