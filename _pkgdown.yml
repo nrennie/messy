@@ -11,3 +11,8 @@ reference:
 - title: Date(time) Messying Functions
 - contents:
   - has_concept("Messy date(time) functions")
+
+news:
+  releases:
+  - text: "Version 0.1.0"
+    href: https://nrennie.rbind.io/blog/introducing-messy-r-package/
