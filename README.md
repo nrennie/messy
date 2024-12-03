@@ -1,5 +1,6 @@
 <!-- badges: start -->
   [![R-CMD-check](https://github.com/nrennie/messy/workflows/R-CMD-check/badge.svg)](https://github.com/nrennie/messy/actions)
+  [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/messy)](https://cran.r-project.org/package=messy)
 <!-- badges: end -->
 
 # messy <img src="man/figures/logo.png" align="right" width="120" />
