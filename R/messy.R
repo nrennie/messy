@@ -23,6 +23,7 @@ messy <- function(data,
     add_special_chars(messiness = messiness) |>
     add_whitespace(messiness = messiness) |>
     make_missing(messiness = messiness, missing = missing) |>
-    change_case(messiness = messiness, case_type = case_type)
+    change_case(messiness = messiness, case_type = case_type) |>
+    alter_separators(messiness = messiness)
   return(output)
 }
