@@ -2,6 +2,7 @@
 
 export(add_special_chars)
 export(add_whitespace)
+export(alter_separators)
 export(change_case)
 export(duplicate_rows)
 export(make_missing)
