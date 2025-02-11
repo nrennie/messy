@@ -1,5 +1,10 @@
 # messy (development version)
 
+* Add 'data deconstructor' functions which split a dataframe into separate dataframes by 'undoing' joining functions:
+  - `unjoin()` splits a dataframe in two, in an inverse of `merge()` or `dplyr::left_join()`
+  - `uncbind()` splits a dataframe into arbitrary parts, inverting `cbind()` or `dplyr::bind_cols()`
+  - `unrbind()` splits a dataframe into arbitrary parts, inverting `rbind()` or `dplyr::bind_rows()`
+
 # messy 0.1.0
 
 * CRAN release
