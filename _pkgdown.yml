@@ -5,12 +5,24 @@ template:
 
 reference:
 - title: General Messying Functions
-- contents:
-  - lacks_concept("Messy date(time) functions")
+  desc: >
+    Functions generally applicable to most dataframes.
+  contents:
+  - lacks_concept(c("Messy date(time) functions", "data deconstructors"))
 
 - title: Date(time) Messying Functions
-- contents:
+  desc: >
+    Functions specifically geared towards messying POSIXCt and Date columns in
+    dataframes.
+  contents:
   - has_concept("Messy date(time) functions")
+
+- title: Dataframe Deconstructors
+  desc: >
+    Functions which return multiple dataframes by undoing common data joining
+    and binding operations.
+  contents:
+  - has_concept("data deconstructors")
 
 news:
   releases:
