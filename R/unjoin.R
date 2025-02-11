@@ -116,6 +116,8 @@ unjoin <- function(data,
 #' @param shuffle Shuffle rows in [unrbind()] or columns in [uncbind()]?
 #'   Defaults to `TRUE`.
 #'
+#' @returns A list of dataframes
+#'
 #' @rdname unrbind
 #' @order 1
 #'

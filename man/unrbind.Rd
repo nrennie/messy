@@ -27,6 +27,9 @@ unnamed.}
 \item{shuffle}{Shuffle rows in \code{\link[=unrbind]{unrbind()}} or columns in \code{\link[=uncbind]{uncbind()}}?
 Defaults to \code{TRUE}.}
 }
+\value{
+A list of dataframes
+}
 \description{
 This function splits a dataframe into any number of dataframes such that they
 can be rejoined by using \code{\link[=rbind]{rbind()}}/\code{\link[dplyr:bind_rows]{dplyr::bind_rows()}} for \code{\link[=unrbind]{unrbind()}} or
