@@ -24,7 +24,8 @@ rows/columns in each resulting dataframe. An alternative to \code{sizes}.}
 \item{names}{The names of the output list. If \code{NULL} the list will be
 unnamed.}
 
-\item{shuffle}{Shuffle rows/columns? Defaults to \code{TRUE}.}
+\item{shuffle}{Shuffle rows in \code{\link[=unrbind]{unrbind()}} or columns in \code{\link[=uncbind]{uncbind()}}?
+Defaults to \code{TRUE}.}
 }
 \description{
 This function splits a dataframe into any number of dataframes such that they
@@ -33,8 +34,18 @@ can be rejoined by using \code{\link[=rbind]{rbind()}}/\code{\link[dplyr:bind_ro
 appropriate to go on and apply \code{\link[=messy]{messy()}} to each new dataframe independently
 to impede rejoining.
 }
+\details{
+Real data can often be found in disparate files. For example, data reports
+may come in monthly and require row-binding together to obtain a complete
+annual time series. Scientific results may arrive from different laboratories
+and require binding together for further analysis and comparisons. This
+function may simulate a single dataframe having come from different sources
+and requiring binding back together. Base R's \code{\link[=split]{split()}} offers an alternative
+to \code{\link[=unrbind]{unrbind()}}, but requires a pre-existing factor column to split by and
+cannot as easily create random splits in the data.
+}
 \examples{
-unrbind(dplyr::tibble(ToothGrowth), probs = c(0.5, 0.3, 0.2))
+unrbind(dplyr::tibble(mtcars), probs = c(0.5, 0.3, 0.2))
 
 uncbind(dplyr::tibble(mtcars), probs = c(0.5, 0.3, 0.2))
 }

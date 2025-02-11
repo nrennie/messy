@@ -97,6 +97,15 @@ unjoin <- function(data,
 #' appropriate to go on and apply [messy()] to each new dataframe independently
 #' to impede rejoining.
 #'
+#' Real data can often be found in disparate files. For example, data reports
+#' may come in monthly and require row-binding together to obtain a complete
+#' annual time series. Scientific results may arrive from different laboratories
+#' and require binding together for further analysis and comparisons. This
+#' function may simulate a single dataframe having come from different sources
+#' and requiring binding back together. Base R's [split()] offers an alternative
+#' to [unrbind()], but requires a pre-existing factor column to split by and
+#' cannot as easily create random splits in the data.
+#'
 #' @inheritParams unjoin
 #' @param sizes A vector of numeric inputs summing to `nrow(data)` for
 #'   [unrbind()] or `ncol(data)` for [uncbind()]; the number of rows of each
@@ -104,7 +113,8 @@ unjoin <- function(data,
 #'   are provided, the dataframe will be split roughly in half.
 #' @param probs A vector of numeric inputs summing to `1`; the proportion of
 #'   rows/columns in each resulting dataframe. An alternative to `sizes`.
-#' @param shuffle Shuffle rows/columns? Defaults to `TRUE`.
+#' @param shuffle Shuffle rows in [unrbind()] or columns in [uncbind()]?
+#'   Defaults to `TRUE`.
 #'
 #' @rdname unrbind
 #' @order 1
