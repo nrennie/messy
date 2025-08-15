@@ -1,6 +1,7 @@
 # messy (development version)
 
 * Add `change_separators()` function
+* Add `duplicate_columns()` function
 
 # messy 0.1.0
 
