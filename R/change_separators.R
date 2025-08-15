@@ -76,7 +76,7 @@ change_sep <- function(x,
   sep_in_escaped <- stringr::str_escape(sep_in)[order(nchar(sep_in), decreasing = TRUE)]
   pattern <- paste0("(", paste(sep_in_escaped, collapse = "|"), ")")
   replace_match <- function(match) {
-    if (runif(1) < messiness) sample(sep_out, 1) else match
+    if (stats::runif(1) < messiness) sample(sep_out, 1) else match
   }
   stringr::str_replace_all(x, pattern, replace_match)
 }

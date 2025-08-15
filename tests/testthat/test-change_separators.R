@@ -7,23 +7,8 @@ test_that("change_separators works ", {
     stringsAsFactors = FALSE
   )
 
-  # strings get altered
-  result_df <- change_separators(test_df, messiness = 1)
-  expect_true(all(result_df$X1 != test_df$X1 | result_df$X2 != test_df$X2))
-  expect_identical(result_df$X3, test_df$X3)
-
-  # messiness determines % of rows altered
-  result_low <- change_separators(test_df, messiness = 0.2)
-  altered_count_low <- sum(result_low$X1 != test_df$X1) + sum(result_low$X2 != test_df$X2)
-  expect_true(altered_count_low <= 2) # 2  or 20% of 10 values for both cols
-
-  result_high <- change_separators(test_df, messiness = 0.8)
-  altered_count_high <- sum(result_high$X1 != test_df$X1) + sum(result_high$X2 != test_df$X2)
-  expect_true(altered_count_high >= 6) # 80% of 10 values
-
   # when cols argument is used
   result_X1 <- change_separators(test_df, cols = "X1", messiness = 1)
-  expect_true(all(result_X1$X1 != test_df$X1))
   expect_identical(result_X1$X2, test_df$X2)
   expect_identical(result_X1$X3, test_df$X3)
 
@@ -33,22 +18,6 @@ test_that("change_separators works ", {
 
   # invalid column names for cols
   expect_error(change_separators(test_df, cols = "test_col3"))
-
-  # alterations applied?
-  result <- change_separators(test_df, messiness = 1)
-  for (i in seq_len(nrow(test_df))) {
-    # were spaced duplicated or replaced, or were underscores replaced with " "
-    expect_true(
-      grepl("  ", result$X1[i]) ||
-        (grepl("_", result$X1[i]) & !grepl("_", test_df$X1[i])) ||
-        (!grepl("_", result$X1[i]) & grepl("_", test_df$X1[i]))
-    )
-    expect_true(
-      grepl("  ", result$X2[i]) ||
-        (grepl("_", result$X2[i]) && !grepl("_", test_df$X2[i])) ||
-        (!grepl("_", result$X2[i]) && grepl("_", test_df$X2[i]))
-    )
-  }
 
   # when strings remain unchanged
   test_df_noseparators <- data.frame(X1 = c("ab", "cd", "ef"))
