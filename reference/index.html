@@ -41,7 +41,7 @@
     <div class="section level2">
       <h2 id="general-messying-functions">General Messying Functions<a class="anchor" aria-label="anchor" href="#general-messying-functions"></a></h2>
 
-
+      <div class="section-desc"><p>Functions generally applicable to most dataframes.</p></div>
 
 
     </div><div class="section level2">
@@ -106,7 +106,7 @@
       </dl></div><div class="section level2">
       <h2 id="date-time-messying-functions">Date(time) Messying Functions<a class="anchor" aria-label="anchor" href="#date-time-messying-functions"></a></h2>
 
-
+      <div class="section-desc"><p>Functions specifically geared towards messying POSIXCt and Date columns in dataframes.</p></div>
 
 
     </div><div class="section level2">
@@ -132,6 +132,29 @@
 
         </dt>
         <dd>Splits date(time) column(s) into multiple columns</dd>
+      </dl></div><div class="section level2">
+      <h2 id="dataframe-deconstructors">Dataframe Deconstructors<a class="anchor" aria-label="anchor" href="#dataframe-deconstructors"></a></h2>
+
+      <div class="section-desc"><p>Functions which return multiple dataframes by undoing common data joining and binding operations.</p></div>
+
+
+    </div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="unjoin.html">unjoin()</a></code>
+
+        </dt>
+        <dd>Splits a dataframe into two, such that it could be reassembled with a mutating join</dd>
+      </dl><dl><dt>
+
+          <code><a href="unrbind.html">unrbind()</a></code> <code><a href="unrbind.html">uncbind()</a></code>
+
+        </dt>
+        <dd>Splits a dataframe row-wise or col-wise into any arbitrary number of dataframes</dd>
       </dl></div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>

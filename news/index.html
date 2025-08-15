@@ -41,7 +41,18 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="messy-development-version">messy (development version)<a class="anchor" aria-label="anchor" href="#messy-development-version"></a></h2>
-<ul><li>Add <code><a href="../reference/change_separators.html">change_separators()</a></code> function</li>
+<ul><li>Add ‘data deconstructor’ functions which split a dataframe into separate dataframes by ‘undoing’ joining functions:
+<ul><li>
+<code><a href="../reference/unjoin.html">unjoin()</a></code> splits a dataframe in two, in an inverse of <code><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge()</a></code> or <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">dplyr::left_join()</a></code>
+</li>
+<li>
+<code><a href="../reference/unrbind.html">uncbind()</a></code> splits a dataframe into arbitrary parts, inverting <code><a href="https://rdrr.io/r/base/cbind.html" class="external-link">cbind()</a></code> or <code><a href="https://dplyr.tidyverse.org/reference/bind_cols.html" class="external-link">dplyr::bind_cols()</a></code>
+</li>
+<li>
+<code><a href="../reference/unrbind.html">unrbind()</a></code> splits a dataframe into arbitrary parts, inverting <code><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind()</a></code> or <code><a href="https://dplyr.tidyverse.org/reference/bind_rows.html" class="external-link">dplyr::bind_rows()</a></code>
+</li>
+</ul></li>
+<li>Add <code><a href="../reference/change_separators.html">change_separators()</a></code> function</li>
 <li>Add <code><a href="../reference/duplicate_columns.html">duplicate_columns()</a></code> function</li>
 <li>Fix <code><a href="../reference/duplicate_rows.html">duplicate_rows()</a></code> to avoid destroying existing columns. Will result in different outputs compared to previous version, with same random seed.</li>
 </ul></div>
