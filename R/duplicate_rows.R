@@ -1,11 +1,11 @@
-#' Duplicate rows and insert them into the dataframe in order or at random
+#' Duplicate rows and insert them into the dataframe in order or at random. May result in numbers being added to the end of row names.
 #'
 #' @param data input dataframe
 #' @param messiness Percentage of rows to duplicate. Must be
 #' between 0 and 1. Default 0.1.
 #' @param shuffle Insert duplicated data underneath original data or insert randomly
 #' @return A dataframe with duplicated rows inserted
-#' @author Philip Leftwich
+#' @author Philip Leftwich, Barry Rowlingson
 #' @export
 #' @examples
 #' duplicate_rows(mtcars, messiness = 0.1)
