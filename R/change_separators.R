@@ -26,22 +26,32 @@ change_separators <- function(data,
 
   if (is.null(cols)) {
     output <- data |>
-      dplyr::mutate(dplyr::across(dplyr::where(is.character), \(x) change_sep(x,
-        messiness = messiness,
-        sep_in = sep_in,
-        sep_out = sep_out
-      )))
+      dplyr::mutate(
+        dplyr::across(
+          dplyr::where(is.character),
+          \(x) change_sep(x,
+            messiness = messiness,
+            sep_in = sep_in,
+            sep_out = sep_out
+          )
+        )
+      )
   } else {
     # are cols present
     if (!all((cols %in% colnames(data)))) {
       stop("All elements of 'cols' must be a column name in 'data'")
     } else {
       output <- data |>
-        dplyr::mutate(dplyr::across(dplyr::all_of(cols), \(x) change_sep(x,
-          messiness = messiness,
-          sep_in = sep_in,
-          sep_out = sep_out
-        )))
+        dplyr::mutate(
+          dplyr::across(
+            dplyr::all_of(cols),
+            \(x) change_sep(x,
+              messiness = messiness,
+              sep_in = sep_in,
+              sep_out = sep_out
+            )
+          )
+        )
     }
   }
   return(output)

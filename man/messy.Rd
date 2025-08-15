@@ -4,7 +4,14 @@
 \alias{messy}
 \title{Messy}
 \usage{
-messy(data, messiness = 0.1, missing = NA, case_type = "word")
+messy(
+  data,
+  messiness = 0.1,
+  missing = NA,
+  case_type = "word",
+  sep_in = c("-", "_", "  ", " "),
+  sep_out = c("-", "_", "  ", " ")
+)
 }
 \arguments{
 \item{data}{input dataframe}
@@ -19,6 +26,12 @@ Default \code{NA}.}
 
 \item{case_type}{Whether the case should change based on
 the \code{"word"} or \code{"letter"}.}
+
+\item{sep_in}{A single value, or vector, or list of what is considered
+a separator in the input data. Default \code{c("-", "_", "  ", " ")}.}
+
+\item{sep_out}{A single value, or vector, or list of what the separators
+may be randomly with. Default \code{c("-", "_", "  ", " ")}.}
 }
 \value{
 a dataframe the same size as the input data.
