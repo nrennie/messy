@@ -1,5 +1,7 @@
 # messy (development version)
 
+* Add `change_separators()` function
+
 # messy 0.1.0
 
 * CRAN release
