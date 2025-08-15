@@ -4,6 +4,9 @@
   - `unjoin()` splits a dataframe in two, in an inverse of `merge()` or `dplyr::left_join()`
   - `uncbind()` splits a dataframe into arbitrary parts, inverting `cbind()` or `dplyr::bind_cols()`
   - `unrbind()` splits a dataframe into arbitrary parts, inverting `rbind()` or `dplyr::bind_rows()`
+* Add `change_separators()` function
+* Add `duplicate_columns()` function
+* Fix `duplicate_rows()` to avoid destroying existing columns. Will result in different outputs compared to previous version, with same random seed.
 
 # messy 0.1.0
 

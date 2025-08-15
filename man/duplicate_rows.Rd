@@ -2,7 +2,7 @@
 % Please edit documentation in R/duplicate_rows.R
 \name{duplicate_rows}
 \alias{duplicate_rows}
-\title{Duplicate rows and insert them into the dataframe in order or at random}
+\title{Duplicate rows and insert them into the dataframe in order or at random. May result in numbers being added to the end of row names.}
 \usage{
 duplicate_rows(data, messiness = 0.1, shuffle = FALSE)
 }
@@ -18,11 +18,11 @@ between 0 and 1. Default 0.1.}
 A dataframe with duplicated rows inserted
 }
 \description{
-Duplicate rows and insert them into the dataframe in order or at random
+Duplicate rows and insert them into the dataframe in order or at random. May result in numbers being added to the end of row names.
 }
 \examples{
 duplicate_rows(mtcars, messiness = 0.1)
 }
 \author{
-Philip Leftwich
+Philip Leftwich, Barry Rowlingson
 }

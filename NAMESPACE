@@ -3,6 +3,8 @@
 export(add_special_chars)
 export(add_whitespace)
 export(change_case)
+export(change_separators)
+export(duplicate_columns)
 export(duplicate_rows)
 export(make_missing)
 export(messy)

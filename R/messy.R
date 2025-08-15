@@ -10,19 +10,25 @@
 #' Default `NA`.
 #' @param case_type Whether the case should change based on
 #' the `"word"` or `"letter"`.
+#' @param sep_in A single value, or vector, or list of what is considered
+#' a separator in the input data. Default `c("-", "_", "  ", " ")`.
+#' @param sep_out A single value, or vector, or list of what the separators
+#' may be randomly with. Default `c("-", "_", "  ", " ")`.
 #' @return a dataframe the same size as the input data.
 #' @export
 #' @examples
 #' messy(mtcars)
-
 messy <- function(data,
                   messiness = 0.1,
                   missing = NA,
-                  case_type = "word") {
+                  case_type = "word",
+                  sep_in = c("-", "_", "  ", " "),
+                  sep_out = c("-", "_", "  ", " ")) {
   output <- data |>
     add_special_chars(messiness = messiness) |>
     add_whitespace(messiness = messiness) |>
     make_missing(messiness = messiness, missing = missing) |>
-    change_case(messiness = messiness, case_type = case_type)
+    change_case(messiness = messiness, case_type = case_type) |>
+    change_separators(messiness = messiness, sep_in = sep_in, sep_out = sep_out)
   return(output)
 }
