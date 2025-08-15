@@ -2,6 +2,7 @@
 
 * Add `change_separators()` function
 * Add `duplicate_columns()` function
+* Fix `duplicate_rows()` to avoid destroying existing columns. Will result in different outputs compared to previous version, with same random seed.
 
 # messy 0.1.0
 
