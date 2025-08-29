@@ -7,6 +7,8 @@
 
 When teaching examples using R, instructors often using *nice* datasets - but these aren't very realistic, and aren't what students will later encounter in the real world. Real datasets have typos, missing values encoded in strange ways, and weird spaces. The {messy} R package takes a *clean* dataset, and randomly adds these things in - giving students the opportunity to practice their data cleaning and wrangling skills without having to change all of your examples.
 
+Read the preprint of the article associated with this package at [nrennie.rbind.io/making-messy-data](https://nrennie.rbind.io/making-messy-data/), and see the article source at [github.com/nrennie/making-messy-data](https://github.com/nrennie/making-messy-data). The article gives more in-depth explanations of the motivation behind the package, and ideas of how to use it in teaching.
+
 ## Installation
 
 Install from CRAN using:
